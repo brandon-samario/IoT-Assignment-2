@@ -10,18 +10,18 @@ def broker_connected(client, userdata, flags, rc):
 
 # Function to callback when a message is received from the MQTT broker
 def message_recieved(client, userdata, msg):
-    # Turns the LED on if the message recieved is 'on'
-    if msg.payload.decode() == "on":
-        GPIO.output(16, GPIO.HIGH)
-    # Turn the LED off if the message recieved is 'off'
-    elif msg.payload.decode() == "off":
-        GPIO.output(16, GPIO.LOW)
+    # Turns the LED on if the message recieved is '1'
+    if msg.payload.decode() == "1":
+        GPIO.output(18, GPIO.HIGH)
+    # Turn the LED off if the message recieved is '0'
+    elif msg.payload.decode() == "0":
+        GPIO.output(18, GPIO.LOW)
 
 # Setup in BCM mode for Raspberry Pi GPIO
 GPIO.setmode(GPIO.BCM)
 
-# Pin 16 as an output for the LED
-GPIO.setup(16, GPIO.OUT)
+# GPIO pin 18 (GPIO 24) as an output for the LED
+GPIO.setup(18, GPIO.OUT)
 
 # MQTT client instance
 client = mqtt.Client()
