@@ -1,0 +1,33 @@
+Implementing MQTT Communication between Raspberry Pi and ESP32
+
+Introduction:
+The project aimed to establish communication between a Raspberry Pi and an ESP32 microcontroller using MQTT protocol. 
+This interaction facilitated data exchange and control signals, crucial for the envisioned IoT-based system. 
+The hardware setup involved a Raspberry Pi, ESP32, jumper wires, a breadboard, an LED, and a resistor. 
+The software components included Python scripts (control.py and actor.py) for Raspberry Pi and an Arduino sketch (sensor.ino) for the ESP32.
+
+Hardware Setup:
+The hardware configuration involved connecting the ESP32 to the WiFi network and MQTT broker while interfacing a potentiometer to obtain analog input. 
+The Raspberry Pi managed MQTT communications and GPIO control for an LED. 
+Wiring diagrams and component descriptions were provided to ensure correct assembly.
+
+Software Components:
+control.py on the Raspberry Pi facilitated MQTT topic subscription, reading configurations from config.json, and reacting to incoming messages by triggering specific actions. 
+Meanwhile, actor.py controlled GPIO pin 18 based on MQTT payload, turning the connected LED on or off.
+
+Implementation:
+The Python scripts utilized the paho-mqtt library to establish MQTT communication, enabling message handling and GPIO control on the Raspberry Pi. 
+The ESP32, programmed using Arduino IDE, interfaced with WiFi, MQTT, and analog signal reading functionalities. 
+Challenges encountered during implementation mainly revolved around configuration parsing and ensuring consistent communication between devices. 
+These were addressed through iterative testing and code adjustments.
+
+Testing:
+Rigorous testing verified effective MQTT communication between the Raspberry Pi and ESP32. 
+The ESP32 successfully published analog values mapped to a 0-100 range to specific MQTT topics, simulating variable measurements like temperature or humidity. 
+The Raspberry Pi received these messages, parsed configurations, and controlled the LED on GPIO pin 18 accordingly, validating the bidirectional communication and action triggering based on MQTT payloads.
+
+Conclusion:
+The project achieved successful communication between Raspberry Pi and ESP32 using MQTT, demonstrating reliable data exchange and control capabilities. 
+The efficiency and simplicity of MQTT for IoT applications were evident, offering a scalable and efficient means of communication. 
+Future iterations could explore enhancing the system with additional sensors or actuators, expanding its utility and functionality.
+
