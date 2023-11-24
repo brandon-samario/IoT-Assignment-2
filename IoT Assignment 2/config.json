@@ -1,0 +1,33 @@
+
+[
+    {
+        "conditions": [
+            {
+                "topic": "potentiometer",
+                "comparison": ">",
+                "value": 25
+            }
+        ],
+        "results": [
+            {
+                "topic": "LED",
+                "value": "on"
+            }
+        ]
+    },
+    {
+        "conditions": [
+            {
+                "topic": "potentiometer",
+                "comparison": "<=",
+                "value": 25
+            }
+        ],
+        "results": [
+            {
+                "topic": "LED",
+                "value": "off"
+            }
+        ]
+    }
+]
