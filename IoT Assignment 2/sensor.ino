@@ -36,8 +36,9 @@ void loop() {
     }
     client.loop();  // Keep connection of MQTT
     
-	// Read the value on potentiometer (0 to 100)
-    int potvalue = analogRead(27);
+    // Reads the analog signal from the potentiometer connected to the pin 34
+    int potvalue = analogRead(34);
+    // Read the value on potentiometer (0 to 100)
     int mapvalue = map(potvalue, 0, 4095, 0, 100);
 
     // Publish the mapped value to the MQTT topic
